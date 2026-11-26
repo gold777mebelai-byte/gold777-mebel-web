@@ -43,6 +43,22 @@
 
   <title>GOLD777 MEBEL</title>
   <link rel="manifest" href="manifest.json">
+  <script>
+    // Keep the browser's "install app" prompt so the in-app Android button can show it.
+    window.gold777Prompt = null;
+    window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); window.gold777Prompt = e; });
+    window.addEventListener('appinstalled', function () { window.gold777Prompt = null; });
+    window.gold777CanInstall = function () { return window.gold777Prompt != null; };
+    window.gold777IsInstalled = function () {
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    };
+    window.gold777Install = function () {
+      var p = window.gold777Prompt;
+      if (!p) return Promise.resolve('unavailable');
+      p.prompt();
+      return p.userChoice.then(function (c) { window.gold777Prompt = null; return c.outcome; });
+    };
+  </script>
 </head>
 <body>
   <!--
