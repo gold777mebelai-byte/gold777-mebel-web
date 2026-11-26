@@ -1,10 +1,10 @@
-{
-    "name": "gold777_mebel",
-    "short_name": "gold777_mebel",
+﻿{
+    "name": "GOLD777 MEBEL",
+    "short_name": "GOLD777",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
+    "background_color": "#FFFFFF",
+    "theme_color": "#0E4D34",
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
